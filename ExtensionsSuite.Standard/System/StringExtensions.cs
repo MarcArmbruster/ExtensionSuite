@@ -1,15 +1,27 @@
-﻿using ExtensionsSuite.Standard.Suite;
-
-namespace ExtensionsSuite.Standard
+﻿namespace ExtensionsSuite.Standard
 {
+    using ExtensionsSuite.Standard.Suite;
+
     public static class StringExtensions
     {
+        /// <summary>
+        /// Gets the first word out of a separated string value.
+        /// </summary>
+        /// <param name="source">The string value.</param>
+        /// <param name="separator">The separater char: semicolon by default.</param>
+        /// <returns>The first word.</returns>
         public static string FirstWord(this string source, char separator = ';')
         {
             ValueChecker.ThrowIfNull(source);
             return FirstWord(source, separator.ToString());
         }
 
+        /// <summary>
+        /// Gets the first word out of a separated string value.
+        /// </summary>
+        /// <param name="source">The string value.</param>
+        /// <param name="separator">The separater string: semicolon by default.</param>
+        /// <returns>The first word.</returns>
         public static string FirstWord(this string source, string separator = ";")
         {
             ValueChecker.ThrowIfNull(source);
@@ -28,12 +40,24 @@ namespace ExtensionsSuite.Standard
             return result;
         }
 
+        /// <summary>
+        /// Gets the last word out of a separated string value.
+        /// </summary>
+        /// <param name="source">The string value.</param>
+        /// <param name="separator">The separater char: semicolon by default.</param>
+        /// <returns>The last word.</returns>
         public static string LastWord(this string source, char separator = ';')
         {
             ValueChecker.ThrowIfNull(source);
             return LastWord(source, separator.ToString());
         }
 
+        /// <summary>
+        /// Gets the last word out of a separated string value.
+        /// </summary>
+        /// <param name="source">The string value.</param>
+        /// <param name="separator">The separater string: semicolon by default.</param>
+        /// <returns>The last word.</returns>
         public static string LastWord(this string source, string separator = ";")
         {
             ValueChecker.ThrowIfNull(source);

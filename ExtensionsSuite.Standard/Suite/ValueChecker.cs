@@ -1,9 +1,14 @@
-﻿using System;
-
-namespace ExtensionsSuite.Standard.Suite
+﻿namespace ExtensionsSuite.Standard.Suite
 {
+    using System;
+
     internal static class ValueChecker
     {
+        /// <summary>
+        /// Checks the given target object for a null reference.
+        /// If there is a null reference a ArgumentNullException will be thrown.
+        /// </summary>
+        /// <param name="target">The traget to be checked.</param>
         internal static void ThrowIfNull(object target)
         {
             if (target == null)
