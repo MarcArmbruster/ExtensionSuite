@@ -50,8 +50,16 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="System\StringExtensionsTests.cs" />
+    <Compile Include="System\StringExtensions\FirstWord.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="System\StringExtensions\IsDecimal.cs" />
+    <Compile Include="System\StringExtensions\IsNumeric.cs" />
+    <Compile Include="System\StringExtensions\LastWord.cs" />
+    <Compile Include="System\StringExtensions\IsInt.cs" />
+    <Compile Include="System\StringExtensions\IsShort.cs" />
+    <Compile Include="System\StringExtensions\IsLong.cs" />
+    <Compile Include="System\StringExtensions\ToInt.cs" />
+    <Compile Include="System\StringExtensions\ToDecimal.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
