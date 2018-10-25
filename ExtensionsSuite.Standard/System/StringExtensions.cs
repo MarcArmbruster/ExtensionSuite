@@ -1,9 +1,11 @@
-﻿namespace ExtensionsSuite.Standard
-{
-    using System.Globalization;
-    using System.Text.RegularExpressions;
-    using ExtensionsSuite.Standard.Suite;
+﻿using ExtensionsSuite.Standard.Suite;
+using ExtensionsSuite.Standard.System;
+using System;
+using System.Globalization;
+using System.Text.RegularExpressions;
 
+namespace ExtensionsSuite.Standard
+{   
     public static class StringExtensions
     {
         /// <summary>
@@ -84,14 +86,19 @@
         /// </summary>
         /// <param name="source">The string value.</param>
         /// <returns>The integer value.</returns>
-        public static int ToInt(this string source)
+        public static int ToInt(this string source, NumericConversionBehavior numericConversionBehavior = NumericConversionBehavior.Default)
         {
             ValueChecker.ThrowIfNull(source);
 
             int result = default(int);
             if (string.IsNullOrEmpty(source) == true)
             {
-                return 0;
+                if (numericConversionBehavior == NumericConversionBehavior.ReturnDefaultValueInsteadOfException)
+                {
+                    return 0;
+                }
+
+                throw new FormatException("Cannot convert from empty/null string to Int32!");
             }
             else
             {
@@ -99,6 +106,15 @@
                 if (int.TryParse(source, out outNumber) == true)
                 {
                     result = outNumber;
+                }
+                else
+                {
+                    if (numericConversionBehavior == NumericConversionBehavior.ReturnDefaultValueInsteadOfException)
+                    {
+                        return 0;
+                    }
+
+                    throw new FormatException($"Cannot convert value {source} to an Int32 value!");
                 }
             }
 
@@ -113,7 +129,7 @@
         /// <param name="source">The string value.</param>
         /// <param name="culture">The culture string (e.q. de-DE). Empty string by default. If not given the current culture will be used.</param>
         /// <returns>The decimal value.</returns>
-        public static decimal ToDecimal(this string source, string culture = "")
+        public static decimal ToDecimal(this string source, string culture = "", NumericConversionBehavior numericConversionBehavior = NumericConversionBehavior.Default)
         {
             ValueChecker.ThrowIfNull(source);
 
@@ -131,7 +147,12 @@
             decimal result = 0m;
             if (string.IsNullOrEmpty(source) == true)
             {
-                return 0m;
+                if (numericConversionBehavior == NumericConversionBehavior.ReturnDefaultValueInsteadOfException)
+                {
+                    return 0m;
+                }
+
+                throw new FormatException("Cannot convert from empty/null string to decimal!");
             }
             else
             {
@@ -139,6 +160,15 @@
                 if (decimal.TryParse(source, NumberStyles.Any, cultureInfo, out outNumber) == true)
                 {
                     result = outNumber;
+                }
+                else
+                {
+                    if (numericConversionBehavior == NumericConversionBehavior.ReturnDefaultValueInsteadOfException)
+                    {
+                        return 0m;
+                    }
+
+                    throw new FormatException($"Cannot convert value {source} to a decimal value!");
                 }
             }
 

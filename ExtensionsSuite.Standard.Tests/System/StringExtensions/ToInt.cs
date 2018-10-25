@@ -1,4 +1,5 @@
 ﻿using System;
+using ExtensionsSuite.Standard.System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ExtensionsSuite.Standard.Tests.System.StringExtensions
@@ -18,14 +19,38 @@ namespace ExtensionsSuite.Standard.Tests.System.StringExtensions
         public void ToIntSourceEmptyTest()
         {
             string source = string.Empty;
-            Assert.AreEqual(0, source.ToInt());
+            Assert.AreEqual(0, source.ToInt(NumericConversionBehavior.ReturnDefaultValueInsteadOfException));
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(FormatException))]
+        public void ToIntSourceEmptyExceptionTest()
+        {
+            string source = string.Empty;
+            source.ToInt(NumericConversionBehavior.Default);
         }
 
         [TestMethod]
         public void ToIntSourceWrongTest()
         {
             string source = "non integer";
-            Assert.AreEqual(0, source.ToInt());
+            Assert.AreEqual(0, source.ToInt(NumericConversionBehavior.ReturnDefaultValueInsteadOfException));
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(FormatException))]
+        public void ToIntSourceWrongExceptionTest()
+        {
+            string source = "non integer";
+            source.ToInt(NumericConversionBehavior.Default);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(FormatException))]
+        public void ToIntSourceWrongExceptionWithouParameterTest()
+        {
+            string source = "non integer";
+            source.ToInt();
         }
 
         [TestMethod]

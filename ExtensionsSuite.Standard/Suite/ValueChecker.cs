@@ -1,7 +1,7 @@
-﻿namespace ExtensionsSuite.Standard.Suite
-{
-    using System;
+﻿using System;
 
+namespace ExtensionsSuite.Standard.Suite
+{
     internal static class ValueChecker
     {
         /// <summary>
