@@ -50,6 +50,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="System.Collections.Concurrent\ConcurrentBag\Clear.cs" />
     <Compile Include="System.Collections.Generic\ICollection\AddRange.cs" />
     <Compile Include="System.Collections.Generic\ICollection\RemoveRange.cs" />
     <Compile Include="System.Collections.Generic\IReadOnlyList\IndexOf.cs" />
