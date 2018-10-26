@@ -50,6 +50,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="System\StringExtensions\Contains.cs" />
     <Compile Include="System\StringExtensions\FirstWord.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="System\StringExtensions\IsDecimal.cs" />

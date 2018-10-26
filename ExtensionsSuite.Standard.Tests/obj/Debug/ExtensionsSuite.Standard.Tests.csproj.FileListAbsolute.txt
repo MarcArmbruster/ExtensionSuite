@@ -235,3 +235,9 @@ C:\Users\ahrensg1\Source\Repos\MarcArmbruster\ExtensionSuite\ExtensionsSuite.Sta
 C:\Users\ahrensg1\Source\Repos\MarcArmbruster\ExtensionSuite\ExtensionsSuite.Standard.Tests\obj\Debug\ExtensionsSuite.Standard.Tests.csprojAssemblyReference.cache
 C:\Users\ahrensg1\Source\Repos\MarcArmbruster\ExtensionSuite\ExtensionsSuite.Standard.Tests\obj\Debug\ExtensionsSuite.Standard.Tests.csproj.CoreCompileInputs.cache
 C:\Users\ahrensg1\Source\Repos\MarcArmbruster\ExtensionSuite\ExtensionsSuite.Standard.Tests\obj\Debug\ExtensionsSuite.Standard.Tests.csproj.CopyComplete
+C:\Users\ahrensg1\Source\Repos\MarcArmbruster\ExtensionSuite\ExtensionsSuite.Standard.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\ahrensg1\Source\Repos\MarcArmbruster\ExtensionSuite\ExtensionsSuite.Standard.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\ahrensg1\Source\Repos\MarcArmbruster\ExtensionSuite\ExtensionsSuite.Standard.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\ahrensg1\Source\Repos\MarcArmbruster\ExtensionSuite\ExtensionsSuite.Standard.Tests\bin\Debug\de\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.resources.dll
+C:\Users\ahrensg1\Source\Repos\MarcArmbruster\ExtensionSuite\ExtensionsSuite.Standard.Tests\bin\Debug\de\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.resources.dll
+C:\Users\ahrensg1\Source\Repos\MarcArmbruster\ExtensionSuite\ExtensionsSuite.Standard.Tests\bin\Debug\de\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
