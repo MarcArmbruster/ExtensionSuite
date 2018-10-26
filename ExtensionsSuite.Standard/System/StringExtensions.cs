@@ -80,6 +80,28 @@ namespace ExtensionsSuite.Standard
         }
 
         /// <summary>
+        /// Checks whether a substring exists in a text. With an option upper and lower case can be ignored.
+        /// </summary>
+        /// <param name="source">The string value.</param>
+        /// <param name="toCheck">Part of string</param>
+        /// <param name="comparisonType">Enum StringComparison</param>
+        /// <returns></returns>
+        public static bool Contains(this string source, string toCheck, StringComparison comparisonType = StringComparison.CurrentCultureIgnoreCase)
+        {
+            ValueChecker.ThrowIfNull(source);
+            ValueChecker.ThrowIfNull(toCheck);
+
+            if (source == null || toCheck == null)
+            {
+                return false;
+            }
+            else
+            {
+                return source.IndexOf(toCheck, comparisonType) >= 0;
+            }
+        }
+
+        /// <summary>
         /// Converts the given string value into an Int32 value.
         /// If converting is not possible 0 will be returned.
         /// To check format use <see cref="IsInt(string)"/> method, please.
