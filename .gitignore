@@ -3,10 +3,12 @@
 ################################################################################
 
 /ExtensionsSuite.Standard/bin/Debug/netstandard1.3
-/ExtensionsSuite.Standard/obj
 /ExtensionsSuite.Standard.Tests/bin/Debug
 /ExtensionsSuite.Standard.Tests/obj/Debug
 /packages/MSTest.TestAdapter.1.3.2
 /packages/MSTest.TestFramework.1.3.2
 /.vs/ExtensionsSuite
 /.axoCover/runs
+/ExtensionsSuite.Standard/obj/MCD
+/ExtensionsSuite.Standard/obj/Debug
+/ExtensionsSuite.Standard.Tests/obj/Release/ExtensionsSuite.Standard.Tests.csproj.CoreCompileInputs.cache
