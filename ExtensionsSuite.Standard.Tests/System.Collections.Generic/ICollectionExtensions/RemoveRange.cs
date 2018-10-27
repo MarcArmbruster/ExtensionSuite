@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
 
-namespace ExtensionsSuite.Standard.Tests.System.Collections.Generic.ICollection
+namespace ExtensionsSuite.Standard.Tests.System.Collections.Generic.ICollectionExtensions
 {
     [TestClass]
     public class RemoveRange

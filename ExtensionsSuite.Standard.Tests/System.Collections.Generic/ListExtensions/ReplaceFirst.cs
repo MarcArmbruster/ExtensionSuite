@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace ExtensionsSuite.Standard.Tests.System.Collections.Generic.List
+namespace ExtensionsSuite.Standard.Tests.System.Collections.Generic.ListExtensions
 {
     [TestClass]
     public class ReplaceFirst

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace ExtensionsSuite.Standard.Tests.System.Collections.Generic.ICollection
+namespace ExtensionsSuite.Standard.Tests.System.Collections.Generic.ICollectionExtensions
 {
     [TestClass]
     public class AddRange

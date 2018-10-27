@@ -2,7 +2,7 @@
 using System.Collections.Concurrent;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace ExtensionsSuite.Standard.Tests.System.Collections.Concurrent.ConcurrentBag
+namespace ExtensionsSuite.Standard.Tests.System.Collections.Concurrent.ConcurrentBagExtensions
 {
     [TestClass]
     public class Clear

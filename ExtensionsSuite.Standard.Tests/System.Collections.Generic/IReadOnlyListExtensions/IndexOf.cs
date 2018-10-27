@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace ExtensionsSuite.Standard.Tests.System.Collections.Generic.IReadOnlyList
+namespace ExtensionsSuite.Standard.Tests.System.Collections.Generic.IReadOnlyListExtensions
 {   
     [TestClass]
     public class IndexOf
