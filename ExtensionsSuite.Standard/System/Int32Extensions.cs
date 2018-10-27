@@ -43,7 +43,7 @@ namespace System
         /// Returns the ovewrflow-safe calculated new int? value - means: watching for overflows on upper and lower boundaries.
         /// If new value overflows the boundary, the boundary value is returned as new value.
         /// </summary>
-        /// <param name="existing">The existing.</param>
+        /// <param name="existing">The existing vlaue.</param>
         /// <param name="addValue">The add value.</param>
         /// <returns>The overflow checked value.</returns>
         public static int? Add(this int? existing, int? addValue)

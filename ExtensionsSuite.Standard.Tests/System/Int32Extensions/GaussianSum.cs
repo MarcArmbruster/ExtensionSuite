@@ -29,7 +29,7 @@ namespace ExtensionsSuite.Standard.Tests.System.Int32Extensions
 
         [TestMethod]
         public void HundredTest()
-        {
+        {            
             int value = 100;
             Assert.AreEqual(5050, value.GaussianSum());
         }
