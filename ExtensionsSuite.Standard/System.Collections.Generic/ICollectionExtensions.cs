@@ -43,5 +43,29 @@ namespace System.Collections.Generic
                 source.Remove(item);
             }
         }
+
+        /// <summary>
+        /// Override to the Conatins method to accept a predicate delegate.
+        /// </summary>
+        /// <typeparam name="T">The item type.</typeparam>
+        /// <param name="source">The source collection.</param>
+        /// <param name="predicate">The predicate delegate.</param>
+        public static IEnumerable<T> Matches<T>(this ICollection<T> source, Predicate<T> predicate)
+        {
+            ValueChecker.ThrowIfNull(source);
+            return source.Where(item => predicate.Invoke(item));
+        }
+
+        /// <summary>
+        /// Override to the Conatins method to accept a predicate delegate.
+        /// </summary>
+        /// <typeparam name="T">The item type.</typeparam>
+        /// <param name="source">The source collection.</param>
+        /// <param name="predicate">The predicate delegate.</param>
+        public static bool Contains<T>(this ICollection<T> source, Predicate<T> predicate)
+        {
+            ValueChecker.ThrowIfNull(source);
+            return source.Any(item => predicate.Invoke(item));
+        }
     }
 }
