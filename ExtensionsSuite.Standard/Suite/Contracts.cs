@@ -51,6 +51,24 @@ namespace ExtensionsSuite.Standard.Suite
             }
         }
 
+        public static void ThrowIfNull(object target)
+        {
+            if (target == null)
+            {
+                var typeName = nameof(target);
+                throw new ArgumentNullException($"Parameter value of type {typeName} is not allowed to be null.");
+            }
+        }
+
+        public static void ThrowIfNullOrEmpty(string target)
+        {
+            if (string.IsNullOrEmpty(target) == true)
+            {
+                var typeName = nameof(target);
+                throw new ArgumentException($"Parameter value of type {typeName} is not allowed to be null or string empty.");
+            }
+        }
+
         public static T CastOrThrow<T>(object value)
         {
             object getAs = null;
