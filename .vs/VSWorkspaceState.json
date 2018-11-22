@@ -2,9 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\ExtensionsSuite.Standard",
-    "\\ExtensionsSuite.Standard.Tests\\System\\StringExtensions",
+    "\\ExtensionsSuite.Standard\\Suite",
     "\\ExtensionsSuite.Standard\\System"
   ],
-  "SelectedNode": "\\ExtensionsSuite.Standard\\System\\StringExtensions.cs",
+  "SelectedNode": "\\ExtensionsSuite.Standard\\Suite\\Contracts.cs",
   "PreviewInSolutionExplorer": false
 }
