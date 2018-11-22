@@ -74,6 +74,7 @@
     <Compile Include="System\StringExtensions\IsLong.cs" />
     <Compile Include="System\StringExtensions\ToInt.cs" />
     <Compile Include="System\StringExtensions\ToDecimal.cs" />
+    <Compile Include="System\StringExtensions\Replace.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
