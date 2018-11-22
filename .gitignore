@@ -9,4 +9,7 @@
 /ExtensionsSuite.Standard/obj/MCD
 /ExtensionsSuite.Standard/obj/Debug
 /ExtensionsSuite.Standard.Tests/obj/Release/ExtensionsSuite.Standard.Tests.csproj.CoreCompileInputs.cache
-
+/ExtensionsSuite.Standard.Tests/obj/Debug/ExtensionsSuite.Standard.Tests.csprojAssemblyReference.cache
+/ExtensionsSuite.Standard.Tests/obj/Debug/ExtensionsSuite.Standard.Tests.dll
+/ExtensionsSuite.Standard.Tests/obj/Debug/ExtensionsSuite.Standard.Tests.pdb
+/.vs

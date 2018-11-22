@@ -50,7 +50,20 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="System\StringExtensions\Contains.cs" />
+    <Compile Include="System.Collections.Concurrent\ConcurrentBagExtensions\Clear.cs" />
+    <Compile Include="System.Collections.Generic\ICollectionExtensions\AddRange.cs" />
+    <Compile Include="System.Collections.Generic\ICollectionExtensions\RemoveRange.cs" />
+    <Compile Include="System.Collections.Generic\ICollectionExtensions\Matches.cs" />
+    <Compile Include="System.Collections.Generic\ICollectionExtensions\Contains.cs" />
+    <Compile Include="System.Collections.Generic\IReadOnlyListExtensions\IndexOf.cs" />
+    <Compile Include="System.Collections.Generic\ListExtensions\ReplaceFirst.cs" />
+    <Compile Include="System.Threadin.Tasks\TaskExtensions\IsRunning.cs" />
+    <Compile Include="System\DateTimeExtensions\IsBetween.cs" />
+    <Compile Include="System\DateTimeExtensions\AddWeeks.cs" />
+    <Compile Include="System\Int32Extensions\GaussianSum.cs" />
+    <Compile Include="System\Int32Extensions\Add.cs" />
+    <Compile Include="System\Int32Extensions\IsNullOrZero.cs" />
+    <Compile Include="System\Int32Extensions\IsNotNullAndNotZero.cs" />
     <Compile Include="System\StringExtensions\FirstWord.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="System\StringExtensions\IsDecimal.cs" />
