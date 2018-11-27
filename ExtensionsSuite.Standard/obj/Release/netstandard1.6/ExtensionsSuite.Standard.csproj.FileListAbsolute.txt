@@ -1,8 +1,0 @@
-C:\Users\ahrensg1\Source\Repos\MarcArmbruster\ExtensionSuite\ExtensionsSuite.Standard\obj\Release\netstandard1.6\ExtensionsSuite.Standard.csproj.CoreCompileInputs.cache
-C:\Users\ahrensg1\Source\Repos\MarcArmbruster\ExtensionSuite\ExtensionsSuite.Standard\obj\Release\netstandard1.6\ExtensionsSuite.Standard.AssemblyInfoInputs.cache
-C:\Users\ahrensg1\Source\Repos\MarcArmbruster\ExtensionSuite\ExtensionsSuite.Standard\obj\Release\netstandard1.6\ExtensionsSuite.Standard.AssemblyInfo.cs
-C:\Users\ahrensg1\Source\Repos\MarcArmbruster\ExtensionSuite\ExtensionsSuite.Standard\bin\Release\netstandard1.6\ExtensionsSuite.Standard.deps.json
-C:\Users\ahrensg1\Source\Repos\MarcArmbruster\ExtensionSuite\ExtensionsSuite.Standard\bin\Release\netstandard1.6\ExtensionsSuite.Standard.dll
-C:\Users\ahrensg1\Source\Repos\MarcArmbruster\ExtensionSuite\ExtensionsSuite.Standard\bin\Release\netstandard1.6\ExtensionsSuite.Standard.pdb
-C:\Users\ahrensg1\Source\Repos\MarcArmbruster\ExtensionSuite\ExtensionsSuite.Standard\obj\Release\netstandard1.6\ExtensionsSuite.Standard.dll
-C:\Users\ahrensg1\Source\Repos\MarcArmbruster\ExtensionSuite\ExtensionsSuite.Standard\obj\Release\netstandard1.6\ExtensionsSuite.Standard.pdb
