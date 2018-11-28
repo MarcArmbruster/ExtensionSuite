@@ -12,7 +12,7 @@ namespace ExtensionsSuite.Standard
         {
             Contracts.ThrowIfNull(@this);
             Contracts.ThrowIfNullOrEmpty(oldValue);
-            Contracts.ThrowIfNullOrEmpty(newValue);
+            Contracts.ThrowIfNull(newValue);
 
             int startIndex = 0;
             while (true)
