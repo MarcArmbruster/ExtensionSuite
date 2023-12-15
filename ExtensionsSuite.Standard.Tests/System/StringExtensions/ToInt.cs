@@ -12,14 +12,14 @@ namespace ExtensionsSuite.Standard.Tests.System.StringExtensions
         public void ToIntSourceNullTest()
         {
             string source = null;
-            source.ToInt();
+            source.ToInt32();
         }
 
         [TestMethod]
         public void ToIntSourceEmptyTest()
         {
             string source = string.Empty;
-            Assert.AreEqual(0, source.ToInt(NumericConversionBehavior.ReturnDefaultValueInsteadOfException));
+            Assert.AreEqual(0, source.ToInt32(NumericConversionBehavior.ReturnDefaultValueInsteadOfException));
         }
 
         [TestMethod]
@@ -27,14 +27,14 @@ namespace ExtensionsSuite.Standard.Tests.System.StringExtensions
         public void ToIntSourceEmptyExceptionTest()
         {
             string source = string.Empty;
-            source.ToInt(NumericConversionBehavior.Default);
+            source.ToInt32(NumericConversionBehavior.Default);
         }
 
         [TestMethod]
         public void ToIntSourceWrongTest()
         {
             string source = "non integer";
-            Assert.AreEqual(0, source.ToInt(NumericConversionBehavior.ReturnDefaultValueInsteadOfException));
+            Assert.AreEqual(0, source.ToInt32(NumericConversionBehavior.ReturnDefaultValueInsteadOfException));
         }
 
         [TestMethod]
@@ -42,7 +42,7 @@ namespace ExtensionsSuite.Standard.Tests.System.StringExtensions
         public void ToIntSourceWrongExceptionTest()
         {
             string source = "non integer";
-            source.ToInt(NumericConversionBehavior.Default);
+            source.ToInt32(NumericConversionBehavior.Default);
         }
 
         [TestMethod]
@@ -50,21 +50,21 @@ namespace ExtensionsSuite.Standard.Tests.System.StringExtensions
         public void ToIntSourceWrongExceptionWithouParameterTest()
         {
             string source = "non integer";
-            source.ToInt();
+            source.ToInt32();
         }
 
         [TestMethod]
         public void ToIntPositiveValueTest()
         {
             string source = "321";
-            Assert.AreEqual(321, source.ToInt());
+            Assert.AreEqual(321, source.ToInt32());
         }
 
         [TestMethod]
         public void ToIntNegativeValueTest()
         {
             string source = "-321";
-            Assert.AreEqual(-321, source.ToInt());
+            Assert.AreEqual(-321, source.ToInt32());
         }
     }
 }

@@ -1,7 +1,7 @@
-﻿using ExtensionsSuite.Standard.Suite;
-
-namespace System.Collections.Concurrent
+﻿namespace System.Collections.Concurrent
 {
+    using ExtensionsSuite.Standard.Suite;
+
     public static class ConcurrentBagExtension
     {
         /// <summary>

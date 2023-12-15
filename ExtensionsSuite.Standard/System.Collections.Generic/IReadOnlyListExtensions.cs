@@ -1,7 +1,7 @@
-﻿using ExtensionsSuite.Standard.Suite;
-
-namespace System.Collections.Generic
+﻿namespace System.Collections.Generic
 {
+    using ExtensionsSuite.Standard.Suite;
+
     public static class IReadOnlyListExtensions
     {
         /// <summary>

@@ -1,7 +1,7 @@
-﻿using ExtensionsSuite.Standard.Suite;
-
-namespace System.Threading.Tasks
+﻿namespace System.Threading.Tasks
 {
+    using ExtensionsSuite.Standard.Suite;
+
     /// <summary>
     /// Contains extension methods for the <see cref="Task"/> class.
     /// </summary>

@@ -71,12 +71,9 @@ namespace ExtensionsSuite.Standard.Suite
 
         public static T CastOrThrow<T>(object value)
         {
-            object getAs = null;
-
             try
             {
-                getAs = value == null ? default(T) : (T)Convert.ChangeType(value, typeof(T));
-
+                object getAs = value == null ? default : (T)Convert.ChangeType(value, typeof(T));
                 if ((getAs.GetType() == typeof(T)) == false)
                 {
                     throw new InvalidCastException($"Incorrect type, cannot cast to type {typeof(T).FullName}");
@@ -92,12 +89,9 @@ namespace ExtensionsSuite.Standard.Suite
 
         public static T CastOrThrow<T, TException>(object value) where TException : Exception, new()
         {
-            object getAs = null;
-
             try
             {
-                getAs = value == null ? default(T) : (T)Convert.ChangeType(value, typeof(T));
-
+                object getAs = value == null ? default : (T)Convert.ChangeType(value, typeof(T));
                 if ((getAs.GetType() == typeof(T)) == false)
                 {
                     throw Activator.CreateInstance(

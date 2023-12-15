@@ -53,7 +53,7 @@ namespace ExtensionsSuite.Standard
         {
             Contracts.ThrowIfNull(@this);
 
-            string result = string.Empty;
+            string result;
             if (@this.Contains(separator) == true)
             {
                 string[] words = @this.Split(separator.ToCharArray());
@@ -88,7 +88,7 @@ namespace ExtensionsSuite.Standard
         public static string LastWord(this string @this, string separator = ";")
         {
             Contracts.ThrowIfNull(@this);
-            string result = string.Empty;
+            string result;
             if (@this.Contains(separator) == true)
             {
                 string[] words = @this.Split(separator.ToCharArray());
@@ -131,11 +131,11 @@ namespace ExtensionsSuite.Standard
         /// </summary>
         /// <param name="this">The string value.</param>
         /// <returns>The integer value.</returns>
-        public static int ToInt(this string @this, NumericConversionBehavior numericConversionBehavior = NumericConversionBehavior.Default)
+        public static int ToInt32(this string @this, NumericConversionBehavior numericConversionBehavior = NumericConversionBehavior.Default)
         {
             Contracts.ThrowIfNull(@this);
 
-            int result = default(int);
+            int result;
             if (string.IsNullOrEmpty(@this) == true)
             {
                 if (numericConversionBehavior == NumericConversionBehavior.ReturnDefaultValueInsteadOfException)
@@ -147,8 +147,7 @@ namespace ExtensionsSuite.Standard
             }
             else
             {
-                int outNumber;
-                if (int.TryParse(@this, out outNumber) == true)
+                if (int.TryParse(@this, out int outNumber) == true)
                 {
                     result = outNumber;
                 }
@@ -167,19 +166,59 @@ namespace ExtensionsSuite.Standard
         }
 
         /// <summary>
-        /// Converts the given string value into a decimal value.
+        /// Converts the given string value into an Int64 value.
         /// If converting is not possible 0 will be returned.
-        /// To check format use <see cref="IsDecimal(string)"/> method, please.
+        /// To check format use <see cref="IsLong(string)"/> method, please.
         /// </summary>
         /// <param name="this">The string value.</param>
-        /// <param name="culture">The culture string (e.q. de-DE). Empty string by default. If not given the current culture will be used.</param>
-        /// <returns>The decimal value.</returns>
-        public static decimal ToDecimal(this string @this, string culture = "", NumericConversionBehavior numericConversionBehavior = NumericConversionBehavior.Default)
+        /// <returns>The integer value.</returns>
+        public static long ToInt64(this string @this, NumericConversionBehavior numericConversionBehavior = NumericConversionBehavior.Default)
         {
             Contracts.ThrowIfNull(@this);
 
-            CultureInfo cultureInfo = null;
+            long result;
+            if (string.IsNullOrEmpty(@this) == true)
+            {
+                if (numericConversionBehavior == NumericConversionBehavior.ReturnDefaultValueInsteadOfException)
+                {
+                    return 0L;
+                }
 
+                throw new FormatException("Cannot convert from empty/null string to Int64!");
+            }
+            else
+            {
+                if (long.TryParse(@this, out long outNumber) == true)
+                {
+                    result = outNumber;
+                }
+                else
+                {
+                    if (numericConversionBehavior == NumericConversionBehavior.ReturnDefaultValueInsteadOfException)
+                    {
+                        return 0L;
+                    }
+
+                    throw new FormatException($"Cannot convert value {@this} to an Int64 value!");
+                }
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Converts the given string value into a double value.
+        /// If converting is not possible 0 will be returned.
+        /// To check format use <see cref="IsDouble(string)"/> method, please.
+        /// </summary>
+        /// <param name="this">The string value.</param>
+        /// <param name="culture">The culture string (e.q. de-DE). Empty string by default. If not given the current culture will be used.</param>
+        /// <returns>The double value.</returns>
+        public static double ToDouble(this string @this, string culture = "", NumericConversionBehavior numericConversionBehavior = NumericConversionBehavior.Default)
+        {
+            Contracts.ThrowIfNull(@this);
+
+            CultureInfo cultureInfo;
             if (string.IsNullOrEmpty(culture) == false)
             {
                 cultureInfo = new CultureInfo(culture);
@@ -189,7 +228,59 @@ namespace ExtensionsSuite.Standard
                 cultureInfo = CultureInfo.CurrentCulture;
             }
 
-            decimal result = 0m;
+            double result;
+            if (string.IsNullOrEmpty(@this) == true)
+            {
+                if (numericConversionBehavior == NumericConversionBehavior.ReturnDefaultValueInsteadOfException)
+                {
+                    return 0d;
+                }
+
+                throw new FormatException("Cannot convert from empty/null string to double!");
+            }
+            else
+            {
+                if (double.TryParse(@this, NumberStyles.Any, cultureInfo, out double outNumber) == true)
+                {
+                    result = outNumber;
+                }
+                else
+                {
+                    if (numericConversionBehavior == NumericConversionBehavior.ReturnDefaultValueInsteadOfException)
+                    {
+                        return 0d;
+                    }
+
+                    throw new FormatException($"Cannot convert value {@this} to a double value!");
+                }
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Converts the given string value into a decimal value.
+        /// If converting is not possible 0 will be returned.
+        /// To check format use <see cref="IsDecimal(string)"/> method, please.
+        /// </summary>
+        /// <param name="this">The string value.</param>
+        /// <param name="culture">The culture string (e.q. de-DE). Empty string by default. If not given the current culture will be used.</param>
+        /// <returns>The double value.</returns>
+        public static decimal ToDecimal(this string @this, string culture = "", NumericConversionBehavior numericConversionBehavior = NumericConversionBehavior.Default)
+        {
+            Contracts.ThrowIfNull(@this);
+
+            CultureInfo cultureInfo;
+            if (string.IsNullOrEmpty(culture) == false)
+            {
+                cultureInfo = new CultureInfo(culture);
+            }
+            else
+            {
+                cultureInfo = CultureInfo.CurrentCulture;
+            }
+
+            decimal result;
             if (string.IsNullOrEmpty(@this) == true)
             {
                 if (numericConversionBehavior == NumericConversionBehavior.ReturnDefaultValueInsteadOfException)
@@ -201,8 +292,7 @@ namespace ExtensionsSuite.Standard
             }
             else
             {
-                decimal outNumber;
-                if (decimal.TryParse(@this, NumberStyles.Any, cultureInfo, out outNumber) == true)
+                if (decimal.TryParse(@this, NumberStyles.Any, cultureInfo, out decimal outNumber) == true)
                 {
                     result = outNumber;
                 }
@@ -249,8 +339,7 @@ namespace ExtensionsSuite.Standard
         public static bool IsInt(this string @this)
         {
             Contracts.ThrowIfNull(@this);
-            int dummyInt;
-            return int.TryParse(@this, out dummyInt);
+            return int.TryParse(@this, out _);
         }
 
         /// <summary>
@@ -261,8 +350,7 @@ namespace ExtensionsSuite.Standard
         public static bool IsShort(this string @this)
         {
             Contracts.ThrowIfNull(@this);
-            short dummyShort;
-            return short.TryParse(@this, out dummyShort);
+            return short.TryParse(@this, out _);
         }
 
         /// <summary>
@@ -273,8 +361,7 @@ namespace ExtensionsSuite.Standard
         public static bool IsLong(this string @this)
         {
             Contracts.ThrowIfNull(@this);
-            long dummyLong;
-            return long.TryParse(@this, out dummyLong);
+            return long.TryParse(@this, out _);
         }
 
         /// <summary>
@@ -285,8 +372,18 @@ namespace ExtensionsSuite.Standard
         public static bool IsDecimal(this string @this)
         {
             Contracts.ThrowIfNull(@this);
-            decimal dummyDecimal;
-            return decimal.TryParse(@this, out dummyDecimal);
+            return decimal.TryParse(@this, out _);
+        }
+
+        /// <summary>
+        /// Verifies if the string can be interpreted as a double value.
+        /// </summary>
+        /// <param name="this">The source.</param>
+        /// <returns>True if string represents a double value.</returns>
+        public static bool IsDouble(this string @this)
+        {
+            Contracts.ThrowIfNull(@this);
+            return double.TryParse(@this, out _);
         }
     }
 }

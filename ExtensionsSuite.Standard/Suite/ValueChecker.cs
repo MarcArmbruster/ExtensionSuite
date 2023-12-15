@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace ExtensionsSuite.Standard.Suite
+﻿namespace ExtensionsSuite.Standard.Suite
 {
+    using global::System;
+
     internal static class ValueChecker
     {
         /// <summary>
