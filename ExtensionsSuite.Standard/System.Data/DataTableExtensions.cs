@@ -6,6 +6,27 @@
 
     public static class DataTableExtensions
     {
+        /// <summary>
+        /// Destroys the entire DataTable instance.
+        /// </summary>
+        /// <param name="dataTable">the instance.</param>
+        public static void Destroy(this DataTable dataTable)
+        {
+            if (dataTable != null)
+            {
+                dataTable.ChildRelations.Clear();
+                dataTable.Constraints.Clear();
+                dataTable.Rows.Clear();
+                dataTable.Columns.Clear();
+                dataTable.Clear();
+                dataTable.Dispose();
+
+#pragma warning disable IDE0059 // Unnecessary assignment of a value
+                dataTable = null;
+#pragma warning restore IDE0059 // Unnecessary assignment of a value
+            }
+        }
+
         public static bool HasColumn(this DataTable dataTable, string columnName)
             => dataTable == null ? false : dataTable.Columns.Contains(columnName);
 

@@ -1,11 +1,10 @@
-﻿using ExtensionsSuite.Standard.Suite;
-using ExtensionsSuite.Standard.System;
-using System;
-using System.Globalization;
-using System.Text.RegularExpressions;
+﻿namespace System
+{
+    using ExtensionsSuite.Standard.Suite;
+    using ExtensionsSuite.Standard.System;
+    using System.Globalization;
+    using System.Text.RegularExpressions;
 
-namespace ExtensionsSuite.Standard
-{   
     public static class StringExtensions
     {
         public static string Replace(this string @this, string oldValue, string newValue, StringComparison comparisonType = StringComparison.CurrentCultureIgnoreCase)
@@ -311,6 +310,38 @@ namespace ExtensionsSuite.Standard
         }
 
         /// <summary>
+        /// Determines whether the specified value has only numbers [0..9].
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        ///   <c>true</c> if the specified value has only numbers; otherwise, <c>false</c>.
+        /// </returns>
+        public static bool HasOnlyNumbers(this string value)
+        {
+            var retVal = false;
+
+            if (value == null ||
+                value.Contains(" ") ||
+                value.Contains("-") ||
+                value.Contains("+") ||
+                value.Contains("/") ||
+                value.Contains("*") ||
+                value.Contains(".") ||
+                value.Contains(","))
+            {
+                return false;
+            }
+
+            if (value.IsDouble() && Math.Abs(Convert.ToDouble(value) % 1) < 0.00001)
+            {
+                retVal = true;
+            }
+
+            return retVal;
+
+        }
+
+        /// <summary>
         /// Verifies if the string can be interpreted as a numeric value.
         /// </summary>
         /// <param name="this">The source.</param>
@@ -384,6 +415,117 @@ namespace ExtensionsSuite.Standard
         {
             Contracts.ThrowIfNull(@this);
             return double.TryParse(@this, out _);
+        }
+
+        /// <summary>
+        /// Determines whether the specified value is float.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        ///   <c>true</c> if the specified value is float; otherwise, <c>false</c>.
+        /// </returns>
+        public static bool IsFloat(this string value)
+        {
+            return float.TryParse(value, out _);
+        }
+
+        /// <summary>
+        /// Determines whether [is date time] [the specified value].
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <param name="formatProvider">The format provider.</param>
+        /// <param name="styles">The styles.</param>
+        /// <returns>
+        ///   <c>true</c> if [is date time] [the specified value]; otherwise, <c>false</c>.
+        /// </returns>
+        public static bool IsDateTime(this string value, IFormatProvider formatProvider, DateTimeStyles styles)
+        {
+            return DateTime.TryParse(value, formatProvider, styles, out _);
+        }
+
+        /// <summary>
+        /// Converts value to a nullable Int32.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>The converted value.</returns>
+        public static short? ToNullableShort(this string value)
+        {
+            return string.IsNullOrEmpty(value) || !value.IsShort() ? (short?)null : short.Parse(value, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Converts value to a nullable Int32.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>The converted value.</returns>
+        public static int? ToNullableInt(this string value)
+        {
+            return string.IsNullOrEmpty(value) || !value.IsInt() ? (int?)null : int.Parse(value, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Converts value to a nullable Int32.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>The converted value.</returns>
+        public static long? ToNullableLong(this string value)
+        {
+            return string.IsNullOrEmpty(value) || !value.IsLong() ? (long?)null : long.Parse(value, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Limits the string to a max. length. If the string is longer it will be truncated and symbolized with ... at the end.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <param name="maxLength">Length of the max.</param>
+        /// <returns>The prepared string.</returns>
+        public static string LimitToLength(this string value, int maxLength)
+        {
+            return LimitToLength(value, maxLength, 2, false);
+        }
+
+        /// <summary>
+        /// Limits the string to a max. length. If the string is longer it will be truncated and symbolized with ... at the end.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <param name="maxLength">Length of the max.</param>
+        /// <param name="numberOfEndDots">The number of end dots.</param>
+        /// <param name="isWithWhiteSpace">Length of the max.</param>
+        /// <returns>The prepared string.</returns>
+        public static string LimitToLength(this string value, int maxLength, int numberOfEndDots, bool isWithWhiteSpace)
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                return string.Empty;
+            }
+
+            if (value.Length > maxLength)
+            {
+                if (isWithWhiteSpace)
+                {
+                    return value.Substring(0, maxLength) + " ...";
+                }
+                else
+                {
+                    if (maxLength >= 2)
+                    {
+                        return value.Substring(0, maxLength - numberOfEndDots) + string.Empty.PadLeft(numberOfEndDots, '.');
+                    }
+                }
+                return ".";
+            }
+
+            return value;
+        }
+
+        /// <summary>
+        /// Duplicates single quote symbols to enable direct sql queries.
+        /// </summary>
+        /// <param name="value">The string value to handle.</param>
+        /// <returns>The prepared string.</returns>
+        public static string DuplicateQuote(this string value)
+        {
+            return value.Replace("'", "''");
         }
     }
 }
