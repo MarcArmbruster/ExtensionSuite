@@ -1,20 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace ExtensionsSuite.Standard.Tests.System.Collections.Generic.ListExtensions
+﻿namespace ExtensionsSuite.Standard.Tests.System.Collections.Generic.ListExtensions
 {
+    using global::System;
+    using global::System.Collections.Generic;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
     [TestClass]
     public class ReplaceFirst
-    {
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
-        public void ReplaceFirstSourceNullTest()
-        {
-            List<string> data = null;
-            data.ReplaceFirst(s => s == "Y", "A");
-        }
-
+    {        
         [TestMethod]
         public void ReplaceFirstPositiveTest()
         {

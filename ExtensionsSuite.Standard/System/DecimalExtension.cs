@@ -1,4 +1,4 @@
-﻿namespace TestDataGenerator.Extensions
+﻿namespace System
 {
     /// <summary>
     /// Extensions for the Decimal and Decimal? type.

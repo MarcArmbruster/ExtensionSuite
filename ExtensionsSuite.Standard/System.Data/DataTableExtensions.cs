@@ -27,9 +27,15 @@
             }
         }
 
+        /// <summary>
+        /// Determines whether the DataTable has a column with the given name.
+        /// </summary>
         public static bool HasColumn(this DataTable dataTable, string columnName)
             => dataTable == null ? false : dataTable.Columns.Contains(columnName);
 
+        /// <summary>
+        /// Gets the value, identified by the column and row index values.
+        /// </summary>
         public static T GetValue<T>(this DataTable dataTable, int rowId, int columnId)
         {
             if (dataTable == null)
@@ -46,6 +52,9 @@
             return default;
         }
 
+        /// <summary>
+        /// Gets the value, identified by the column and row index values.
+        /// </summary>
         public static object GetValue(this DataTable dataTable, int rowId, int columnId)
         {
             if (dataTable == null)

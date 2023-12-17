@@ -59,6 +59,7 @@
     <Compile Include="System.Collections.Generic\IReadOnlyListExtensions\IndexOf.cs" />
     <Compile Include="System.Collections.Generic\ListExtensions\ReplaceFirst.cs" />
     <Compile Include="System.Data\DataTable\ToList.cs" />
+    <Compile Include="System.Reflection\PropertyInfo\GetCustomAttributesDataTests.cs" />
     <Compile Include="System.Threadin.Tasks\TaskExtensions\IsRunning.cs" />
     <Compile Include="System\DateTimeExtensions\IsBetween.cs" />
     <Compile Include="System\DateTimeExtensions\AddWeeks.cs" />

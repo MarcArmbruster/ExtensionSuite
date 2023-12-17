@@ -52,9 +52,24 @@
         public static DateTime? AddWeeks(this DateTime? date, int count)
             => date.HasValue ? (DateTime?)date.Value.AddDays(7 * count) : null;
 
+        /// <summary>
+        /// Determines whether the specified value represents a future date.
+        /// </summary>
         public static bool IsFuture(this DateTime value) => value > DateTime.Now;
+
+        /// <summary>
+        /// Determines whether the specified value represents a future date.
+        /// </summary>
         public static bool IsFuture(this DateTime? value) => value.HasValue ? value > DateTime.Now : false;
+
+        /// <summary>
+        /// Determines whether the specified value represents a past date.
+        /// </summary>
         public static bool IsPast(this DateTime value) => value < DateTime.Now;
+
+        /// <summary>
+        /// Determines whether the specified value represents a past date.
+        /// </summary>
         public static bool IsPast(this DateTime? value) => value.HasValue ? value < DateTime.Now : false;
 
         /// <summary>

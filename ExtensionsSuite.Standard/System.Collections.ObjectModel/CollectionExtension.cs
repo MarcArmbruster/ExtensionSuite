@@ -36,8 +36,10 @@
         /// <param name="replacement">The replacing item.</param>
         public static void ReplaceFirst<T>(this List<T> source, Predicate<T> selector, T replacement)
         {
-            Contracts.ThrowIfNull(source);
-            Contracts.ThrowIfNull(selector);
+            if (source == null || source.Count == 0 || selector == null)
+            {
+                return;
+            }
 
             int index = source?.FindIndex(selector) ?? -1;
             if (index == -1)
@@ -139,7 +141,7 @@
         /// <param name="items">The items to remove from the source collection.</param>
         public static void RemoveRange<T>(this ICollection<T> source, IEnumerable<T> items)
         {
-            if (source == null || items == null)
+            if (source == null || source.Count == 0 || items == null)
             {
                 return;
             }
@@ -159,6 +161,11 @@
         /// <returns>The index of the given element. If the collection contains the element, -1 is returned instead.</returns>
         public static int IndexOf<T>(this IReadOnlyList<T> source, T element)
         {
+            if (source == null)
+            {
+                return -1;
+            }
+
             for (int i = 0; i < source.Count; i++)
             {
                 if (EqualityComparer<T>.Default.Equals(element, source[i]))

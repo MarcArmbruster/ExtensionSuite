@@ -1,7 +1,5 @@
 ﻿namespace System.Collections.Generic
 {
-    using ExtensionsSuite.Standard.Suite;
-
     public static class ListExtension
     {
         /// <summary>
@@ -14,7 +12,10 @@
         /// <param name="replacement">The replacing item.</param>
         public static void ReplaceFirst<T>(this List<T> source, Predicate<T> selector, T replacement)
         {
-            ValueChecker.ThrowIfNull(source);
+            if (source == null || source.Count == 0)
+            {
+                return;
+            }
 
             int index = source.FindIndex(selector);
             if (index == -1)
