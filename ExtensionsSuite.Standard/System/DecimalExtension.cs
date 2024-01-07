@@ -26,5 +26,17 @@
         {
             return value != null && value != 0;
         }
+
+        /// <summary>
+        /// Determines whether the specified value is between (incl. boundary values).
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <param name="lowerBound">The lower boundary.</param>
+        /// <param name="upperBound">The upper boundary.</param>
+        /// <returns>
+        ///   <c>true</c> if the specified value is between; otherwise, <c>false</c>.
+        /// </returns>
+        public static bool IsBetween(this decimal? value, decimal? lowerBound, decimal? upperBound)
+            => value >= lowerBound && value <= upperBound;
     }
 }

@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace ExtensionsSuite.Standard.Tests.System.Collections.Generic.ICollectionExtensions
+﻿namespace ExtensionsSuite.Standard.Tests.System.Collections.Generic.ICollectionExtensions
 {
+    using global::System;
+    using global::System.Collections.Generic;
+    using global::System.Linq;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
     [TestClass]
     public class AddRange
     {

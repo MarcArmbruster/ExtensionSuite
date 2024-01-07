@@ -2,6 +2,7 @@
 {
     using ExtensionsSuite.Standard.Suite;
     using System;
+    using System.Data;
     using System.Linq;
     
     /// <summary>
@@ -9,6 +10,45 @@
     /// </summary>
     public static class EnumerableExtension
     {
+        public static DataTable ToDataTable<T>(this IEnumerable<T> items) where T : class
+        {
+            if (items == null)
+            {
+                throw new ArgumentNullException("items");
+            }
+
+            DataTable dt = new DataTable();
+
+            var propertyInfos = typeof(T).GetProperties(
+                                              Reflection.BindingFlags.Instance
+                                            | Reflection.BindingFlags.Public)
+                                         .Where(pi => pi.CanWrite);
+
+            // Create columns
+            foreach (var pi in propertyInfos)
+            {
+                if (pi.CanRead)
+                {
+                    var col = new DataColumn(pi.Name, pi.PropertyType);
+                    dt.Columns.Add(col);
+                }
+            }
+
+            var itemType = typeof(T);
+            foreach (T item in items)
+            {
+                DataRow newRow = dt.NewRow();
+                foreach (var pi in propertyInfos)
+                {
+                    newRow[pi.Name] = pi.GetValue(item);
+                }
+
+                dt.Rows.Add(newRow);
+            }
+                
+            return dt;
+        }
+
         /// <summary>
         /// Returns elements from a sequence that are distinct when compared via a single
         /// specified projection.

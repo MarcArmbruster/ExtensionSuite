@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="System.Collections.Concurrent\ConcurrentBagExtensions\Clear.cs" />
+    <Compile Include="System.Collections.Generic\EnumerableExtensions\ToDataTableTests.cs" />
     <Compile Include="System.Collections.Generic\ICollectionExtensions\AddRange.cs" />
     <Compile Include="System.Collections.Generic\ICollectionExtensions\RemoveRange.cs" />
     <Compile Include="System.Collections.Generic\ICollectionExtensions\Matches.cs" />
@@ -59,10 +60,13 @@
     <Compile Include="System.Collections.Generic\IReadOnlyListExtensions\IndexOf.cs" />
     <Compile Include="System.Collections.Generic\ListExtensions\ReplaceFirst.cs" />
     <Compile Include="System.Data\DataTable\ToList.cs" />
-    <Compile Include="System.Reflection\PropertyInfo\GetCustomAttributesDataTests.cs" />
+    <Compile Include="System.Reflection\MethodInfo\IsAttributedWithTests.cs" />
+    <Compile Include="System.Reflection\PropertyInfo\IsAttributedWithTests.cs" />
     <Compile Include="System.Threadin.Tasks\TaskExtensions\IsRunning.cs" />
     <Compile Include="System\DateTimeExtensions\IsBetween.cs" />
     <Compile Include="System\DateTimeExtensions\AddWeeks.cs" />
+    <Compile Include="System\DecimalExtensions\IsNullOrZero.cs" />
+    <Compile Include="System\FloatExtensions\IsNullOrZero.cs" />
     <Compile Include="System\Int32Extensions\GaussianSum.cs" />
     <Compile Include="System\Int32Extensions\Add.cs" />
     <Compile Include="System\Int32Extensions\IsNullOrZero.cs" />
@@ -78,6 +82,7 @@
     <Compile Include="System\StringExtensions\ToInt.cs" />
     <Compile Include="System\StringExtensions\ToDecimal.cs" />
     <Compile Include="System\StringExtensions\Replace.cs" />
+    <Compile Include="System\ObjectExtensions\AttributeTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -88,6 +93,7 @@
       <Name>ExtensionsSuite.Standard</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

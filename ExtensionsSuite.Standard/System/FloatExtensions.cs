@@ -1,6 +1,6 @@
 ﻿namespace System
 {
-    public static class DoubleExtensions
+    public static class FloatExtensions
     {
         /// <summary>
         /// Determines whether the specified value is null or zero.
@@ -9,7 +9,7 @@
         /// <returns>
         ///  <c>true</c> if value is null or zero; otherwise, <c>false</c>.
         /// </returns>
-        public static bool IsNullOrZero(this double? value)
+        public static bool IsNullOrZero(this float? value)
         {
             return value == null || value == 0;
         }
@@ -19,7 +19,7 @@
         /// </summary>
         /// <param name="value">The value.</param>
         /// <returns>True if value is not null and not zero.</returns>
-        public static bool IsNotNullAndNotZero(this double? value)
+        public static bool IsNotNullAndNotZero(this float? value)
         {
             return value != null && value != 0;
         }
@@ -33,7 +33,7 @@
         /// <returns>
         ///   <c>true</c> if the specified value is between; otherwise, <c>false</c>.
         /// </returns>
-        public static bool IsBetween(this double? value, double? lowerBound, double? upperBound)
+        public static bool IsBetween(this float? value, float? lowerBound, float? upperBound)
             => value >= lowerBound && value <= upperBound;
     }
 }

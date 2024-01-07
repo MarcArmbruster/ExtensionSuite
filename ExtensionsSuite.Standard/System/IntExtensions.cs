@@ -10,7 +10,40 @@
         /// <param name="value">The value</param>
         /// <param name="min">Lower boundary.</param>
         /// <param name="max">Upper boundary.</param>
+        public static bool IsBetween(this byte value, byte min, byte max)
+        {
+            return value >= min && value <= max;
+        }
+
+        /// <summary>
+        /// Verfies wether the value is between the given boundaries (inclusive).
+        /// </summary>
+        /// <param name="value">The value</param>
+        /// <param name="min">Lower boundary.</param>
+        /// <param name="max">Upper boundary.</param>
+        public static bool IsBetween(this byte? value, byte? min, byte? max)
+        {
+            return value >= min && value <= max;
+        }
+
+        /// <summary>
+        /// Verfies wether the value is between the given boundaries (inclusive).
+        /// </summary>
+        /// <param name="value">The value</param>
+        /// <param name="min">Lower boundary.</param>
+        /// <param name="max">Upper boundary.</param>
         public static bool IsBetween(this int value, int min, int max)
+        {
+            return value >= min && value <= max;
+        }
+
+        /// <summary>
+        /// Verfies wether the value is between the given boundaries (inclusive).
+        /// </summary>
+        /// <param name="value">The value</param>
+        /// <param name="min">Lower boundary.</param>
+        /// <param name="max">Upper boundary.</param>
+        public static bool IsBetween(this int? value, int? min, int? max)
         {
             return value >= min && value <= max;
         }
@@ -32,7 +65,29 @@
         /// <param name="value">The value</param>
         /// <param name="min">Lower boundary.</param>
         /// <param name="max">Upper boundary.</param>
+        public static bool IsBetween(this short? value, short? min, short? max)
+        {
+            return value >= min && value <= max;
+        }
+
+        /// <summary>
+        /// Verfies wether the value is between the given boundaries (inclusive).
+        /// </summary>
+        /// <param name="value">The value</param>
+        /// <param name="min">Lower boundary.</param>
+        /// <param name="max">Upper boundary.</param>
         public static bool IsBetween(this long value, long min, long max)
+        {
+            return value >= min && value <= max;
+        }
+
+        /// <summary>
+        /// Verfies wether the value is between the given boundaries (inclusive).
+        /// </summary>
+        /// <param name="value">The value</param>
+        /// <param name="min">Lower boundary.</param>
+        /// <param name="max">Upper boundary.</param>
+        public static bool IsBetween(this long? value, long? min, long? max)
         {
             return value >= min && value <= max;
         }
@@ -144,6 +199,18 @@
         /// <returns>
         ///  <c>true</c> if value is null or zero; otherwise, <c>false</c>.
         /// </returns>
+        public static bool IsNullOrZero(this byte? value)
+        {
+            return value == null || value == 0;
+        }
+
+        /// <summary>
+        /// Determines whether the specified value is null or zero.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        ///  <c>true</c> if value is null or zero; otherwise, <c>false</c>.
+        /// </returns>
         public static bool IsNullOrZero(this long? value)
         {
             return value == null || value == 0;
@@ -165,6 +232,16 @@
         /// <param name="value">The value.</param>
         /// <returns>True if value is not null and not zero.</returns>
         public static bool IsNotNullAndNotZero(this short? value)
+        {
+            return value != null && value != 0;
+        }
+
+        /// <summary>
+        /// Determines whether value is not null and not zero.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>True if value is not null and not zero.</returns>
+        public static bool IsNotNullAndNotZero(this byte? value)
         {
             return value != null && value != 0;
         }
