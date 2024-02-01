@@ -60,6 +60,7 @@
     <Compile Include="System.Collections.Generic\IReadOnlyListExtensions\IndexOf.cs" />
     <Compile Include="System.Collections.Generic\ListExtensions\ReplaceFirst.cs" />
     <Compile Include="System.Data\DataTable\ToList.cs" />
+    <Compile Include="System.Dynamic\ExpandoObjectTests.cs" />
     <Compile Include="System.Reflection\MethodInfo\IsAttributedWithTests.cs" />
     <Compile Include="System.Reflection\PropertyInfo\IsAttributedWithTests.cs" />
     <Compile Include="System.Threadin.Tasks\TaskExtensions\IsRunning.cs" />
