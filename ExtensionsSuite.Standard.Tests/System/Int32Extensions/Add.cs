@@ -1,8 +1,8 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace ExtensionsSuite.Standard.Tests.System.Int32Extensions
+﻿namespace ExtensionsSuite.Standard.Tests.System.Int32Extensions
 {
+    using global::System;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
     [TestClass]
     public class Add
     {

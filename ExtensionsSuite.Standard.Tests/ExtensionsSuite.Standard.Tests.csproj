@@ -72,6 +72,7 @@
     <Compile Include="System\Int32Extensions\Add.cs" />
     <Compile Include="System\Int32Extensions\IsNullOrZero.cs" />
     <Compile Include="System\Int32Extensions\IsNotNullAndNotZero.cs" />
+    <Compile Include="System\Int32Extensions\EvenOdd.cs" />
     <Compile Include="System\StringExtensions\FirstWord.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="System\StringExtensions\IsDecimal.cs" />
