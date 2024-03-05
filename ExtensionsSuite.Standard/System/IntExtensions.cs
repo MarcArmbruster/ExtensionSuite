@@ -1,6 +1,7 @@
 ﻿namespace System
 {
     using System.Diagnostics;
+    using System.Runtime.CompilerServices;
 
     public static class IntExtensions
     {
@@ -265,6 +266,26 @@
         {
             // https://de.wikipedia.org/wiki/Gau%C3%9Fsche_Summenformel
             return (value * (value + 1)) / 2;
+        }
+
+        /// <summary>
+        /// Value is an even number.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>True if value is even.</returns>
+        public static bool IsEven(this int value)
+        {
+            return value % 2 == 0;
+        }
+
+        /// <summary>
+        /// Value is an odd number.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>True if value is odd.</returns>
+        public static bool IsOdd(this int value)
+        {
+            return value % 2 != 0;
         }
     }
 }
