@@ -1,6 +1,8 @@
 ﻿namespace System
 {
+    using System.Collections.Generic;
     using System.Diagnostics;
+    using System.Transactions;
 
     public static class IntExtensions
     {
