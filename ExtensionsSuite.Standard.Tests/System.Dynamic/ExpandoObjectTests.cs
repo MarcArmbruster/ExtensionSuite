@@ -1,6 +1,7 @@
 ﻿namespace ExtensionsSuite.Standard.Tests.System.Dynamic
 {
     using global::System;
+    using global::System.Collections.Generic;
     using global::System.Data;
     using global::System.Dynamic;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -86,6 +87,25 @@
             
             Assert.IsTrue(target.ContainsProperty("ColorCode"));
             Assert.IsTrue(target.IsNullOrDefault<string>("ColorCode"));
+        }
+
+        [TestMethod]
+        public void CreatePropertiesTest()
+        {
+            var target = new ExpandoObject();
+
+            target.CreateProperties(
+                new Dictionary<Type, string>
+                {
+                    { typeof(string), "Getraenk" },
+                    { typeof(decimal), "Preis" }
+                });
+
+            Assert.IsTrue(target.ContainsProperty("Getraenk"));
+            Assert.IsTrue(target.IsNullOrDefault<string>("Getraenk"));
+
+            Assert.IsTrue(target.ContainsProperty("Preis"));
+            Assert.IsTrue(target.IsNullOrDefault<decimal>("Preis"));
         }
 
         [TestMethod]
