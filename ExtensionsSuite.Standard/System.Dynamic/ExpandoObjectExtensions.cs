@@ -72,6 +72,26 @@
         }
 
         /// <summary>
+        /// Creates (or overrides) the dynamic properties. 
+        /// </summary>
+        /// <param name="target">Target instance.</param>
+        /// <param name="properties">Types and names of the properties.</param>
+        public static void CreateProperties(this ExpandoObject target, Dictionary<Type, string> properties)
+        {
+            foreach (var prop in properties)
+            {
+                if (prop.Key.IsValueType)
+                {
+                    ((IDictionary<string, object>)target)[prop.Value] = Activator.CreateInstance(prop.Key);
+                }
+                else
+                {
+                    ((IDictionary<string, object>)target)[prop.Value] = null;
+                }
+            }
+        }
+
+        /// <summary>
         /// Sets the value to the dynamic property. If the property does not exists, it will be created.
         /// </summary>
         /// <typeparam name="T">Type of the property.</typeparam>
