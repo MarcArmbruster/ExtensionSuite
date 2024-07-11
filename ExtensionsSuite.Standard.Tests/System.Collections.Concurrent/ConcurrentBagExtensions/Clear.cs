@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Concurrent;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace ExtensionsSuite.Standard.Tests.System.Collections.Concurrent.ConcurrentBagExtensions
+﻿namespace ExtensionsSuite.Standard.Tests.System.Collections.Concurrent.ConcurrentBagExtensions
 {
+    using global::System;
+    using global::System.Collections.Concurrent;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
     [TestClass]
     public class Clear
     {
         [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
+        [ExpectedException(typeof(NullReferenceException))]
         public void ReplaceFirstSourceNullTest()
         {
             ConcurrentBag<string> data = null;

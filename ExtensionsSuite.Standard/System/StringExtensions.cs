@@ -527,5 +527,24 @@
         {
             return value.Replace("'", "''");
         }
+
+        /// <summary>
+        /// Checks whether the string matches the given wild card search pattern (using * and ? wild cards)
+        /// </summary>
+        /// <param name="text">The text to be analyzed.</param>
+        /// <param name="pattern">The search pattern (conatining * and/or ? wild cards.</param>
+        /// <param name="ignoreCase">Ignore casing: true/false.</param>
+        /// <remarks>Inspired from https://stackoverflow.com/questions/6907720/need-to-perform-wildcard-etc-search-on-a-string-using-regex/35655871#35655871.</remarks>
+        /// <returns>Match true/false.</returns>
+        public static bool MatchesWildCard(this string text, string pattern, bool ignoreCase = true)
+        {
+            var expression = "^" + Regex.Escape(pattern).Replace("\\?", ".").Replace("\\*", ".*") + "$";
+            if (ignoreCase)
+            {
+                return Regex.IsMatch(text, expression, RegexOptions.IgnoreCase);
+            }
+
+            return Regex.IsMatch(text, expression);
+        }
     }
 }

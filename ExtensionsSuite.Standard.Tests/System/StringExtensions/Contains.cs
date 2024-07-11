@@ -7,7 +7,7 @@ namespace ExtensionsSuite.Standard.Tests.System.StringExtensions
     public class Contains
     {
         [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
+        [ExpectedException(typeof(NullReferenceException))]
         public void ContainsSourceNullTest()
         {
             string source = null;

@@ -3,6 +3,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Reflection;
+    using System.Text.Json;
 
     public static class ObjectExtensions
     {
@@ -86,6 +87,32 @@
                 .Where(p => p != null && p.CanRead == true)
                 .Select(p => p.Name)
                 .ToList();
+        }
+
+        /// <summary>
+        /// DeepClone method for any object.
+        /// Clones all public properties.
+        /// </summary>
+        /// <typeparam name="T">Object type</typeparam>
+        /// <param name="source">Source object</param>
+        /// <remarks>Inspired by https://andreslugo.dev/how-to-deep-clone-objects-in-c</remarks>
+        /// <returns>The new, cloned instance</returns>
+        public static T DeepClone<T>(this object source) where T : class
+        {
+            if (object.ReferenceEquals(source, null))
+            {
+                return default;
+            }
+
+            var deserializeSettings = new JsonSerializerOptions
+            {
+                IncludeFields = true,
+                PropertyNameCaseInsensitive = true
+            };
+
+            var serialized = JsonSerializer.Serialize(source);
+            var clone = JsonSerializer.Deserialize<T>(serialized, deserializeSettings);
+            return clone;
         }
     }
 }

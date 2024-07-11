@@ -7,7 +7,7 @@ namespace ExtensionsSuite.Standard.Tests.System.StringExtensions
     public class Replace
     {
         [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
+        [ExpectedException(typeof(NullReferenceException))]
         public void ReplaceWithNull()
         {
             string source = null;

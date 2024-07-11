@@ -1,14 +1,22 @@
 ﻿namespace System.Dynamic
 {
     using System.Collections.Generic;
+    using System.Threading.Tasks;
 
     public static class ExpandoObjectExtensions
     {
         /// <summary>
+        /// Converts the instance to the dynamic type;
+        /// </summary>
+        /// <param name="target">The target instance.</param>
+        /// <returns>The dynamic type representation of the instance.</returns>
+        public static dynamic AsDynamic(this ExpandoObject target) => target as dynamic;
+
+        /// <summary>
         /// Verifies whether the target instances contains a property with the given name.
         /// </summary>
-        /// <param name="target"></param>
-        /// <param name="propertyName"></param>
+        /// <param name="target">The target instance.</param>
+        /// <param name="propertyName">Name of the property.</param>
         /// <returns>True if property exists; false otherwise.</returns>
         public static bool ContainsProperty(this ExpandoObject target, string propertyName)
         {
