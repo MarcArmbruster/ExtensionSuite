@@ -1,7 +1,5 @@
 ﻿namespace ExtensionsSuite.Standard.Tests.System.Collections.Generic.EnumerableExtensions
 {
-    using global::System.Data;
-    using global::System.Linq;
     using global::System.Collections.Generic;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 

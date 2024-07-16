@@ -4,7 +4,9 @@
     using System;
     using System.Data;
     using System.Linq;
-    
+    using System.Text.RegularExpressions;
+    using static System.Net.Mime.MediaTypeNames;
+
     /// <summary>
     /// Extensions for the IEnumerable generic.
     /// </summary>
@@ -146,6 +148,37 @@
             where TSource : class
         {
             return MinAllowingForNull(source, i => i);
+        }
+
+        /// <summary>
+        /// Filters a collection of strings by the given search pattern (using * and ? as search symbols)
+        /// </summary>
+        /// <param name="source">The outgoing Enumerable of strings.</param>
+        /// <param name="searchPattern">The search pattern.</param>
+        /// <param name="ignoreCase">Flag whether to ignore casing.</param>
+        /// <returns>The filtered elements.</returns>
+        public static IEnumerable<string> FilterByWildCardSearch(this IEnumerable<string> source, string searchPattern, bool ignoreCase = true)
+        {
+            var expression = "^" + Regex.Escape(searchPattern).Replace("\\?", ".").Replace("\\*", ".*") + "$";
+            foreach (var text in source) 
+            {
+                if (ignoreCase)
+                {
+                    bool isIgnoreCatch = Regex.IsMatch(text, expression, RegexOptions.IgnoreCase);
+                    if (isIgnoreCatch)
+                    {
+                        yield return text;
+                    }
+                    else
+                    {
+                        bool isMatch = Regex.IsMatch(text, expression, RegexOptions.IgnoreCase);
+                        if (isMatch)
+                        {
+                            yield return text;
+                        }
+                    }
+                }
+            }
         }
     }
 }
