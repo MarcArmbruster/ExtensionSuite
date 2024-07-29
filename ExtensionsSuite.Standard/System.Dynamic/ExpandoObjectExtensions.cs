@@ -1,8 +1,7 @@
 ﻿namespace System.Dynamic
 {
     using System.Collections.Generic;
-    using System.Threading.Tasks;
-
+    
     public static class ExpandoObjectExtensions
     {
         /// <summary>

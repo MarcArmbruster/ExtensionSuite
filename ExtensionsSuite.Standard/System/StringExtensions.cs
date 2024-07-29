@@ -3,6 +3,7 @@
     using ExtensionsSuite.Standard.Suite;
     using ExtensionsSuite.Standard.System;
     using System.Globalization;
+    using System.Security;
     using System.Text.RegularExpressions;
 
     public static class StringExtensions
@@ -545,6 +546,25 @@
             }
 
             return Regex.IsMatch(text, expression);
+        }
+
+        /// <summary>
+        /// Creates a SecureString out of the given string value.
+        /// </summary>
+        /// <param name="this">The string value</param>
+        /// <returns>The SecureString instance.</returns>
+        public static Security.SecureString ToSecureString(this string @this)
+        {
+            SecureString secureString = new SecureString();
+            if (!string.IsNullOrEmpty(@this))
+            {
+                foreach (char c in @this)
+                {
+                    secureString.AppendChar(c);
+                }
+            }
+
+            return secureString;
         }
     }
 }
